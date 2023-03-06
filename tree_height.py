@@ -19,20 +19,45 @@ def compute_height(n, parents):
                 temp = parents[temp]
                 length += 1
             path_lengths[x] = length + 1
-
             
-    return max(path_lengths)
+    return int(max(path_lengths))
 
 
 def main():
-    # implement input form keyboard and from files
-    
+    input_method = input()
+    # implement input from keyboard and from files
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
+    if 'I' in input_method:
+        n = int(input())
+        parents = list(map(int, input().split()))
+        print(compute_height(n, parents))
+    
+    if 'F' in input_method:
+        file_name = input()
+        path = 'test/' + file_name
+
+        if 'a' not in file_name:
+            try:
+                with open(path, 'r') as f:
+                    n = int(f.readline())
+                    parents = list(map(int, f.readline().split()))
+                    print(compute_height(n, parents))
+            except Exception as e:
+                print('An Error occured:', str(e))
+                return
+        else:
+            print('Incorrect file name')    
+            return       
+
+
+
+    
+    
 
 
 # In Python, the default limit on recursion depth is rather low,
