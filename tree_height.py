@@ -1,14 +1,27 @@
+# Patriks Jasinovičs 221RDB082 13.grupa
 # python3
 
 import sys
 import threading
+import numpy
 
 
 def compute_height(n, parents):
     # Write this function
-    max_height = 0
-    # Your code here
-    return max_height
+    path_lengths = numpy.zeros(n)
+    for x in range(n):
+        length = 0
+        if parents[x] == -1:
+            path_lengths[x] = 0
+        else:
+            temp = x
+            while parents[temp] != -1:
+                temp = parents[temp]
+                length += 1
+            path_lengths[x] = length + 1
+
+            
+    return max(path_lengths)
 
 
 def main():
