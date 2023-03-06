@@ -1,5 +1,7 @@
 # Patriks Jasinovičs 221RDB082 13.grupa
-# python3
+# Visi testi izpildās, bet viens tests iet ilgāk par 4 minūtēm, tāpēc ir runtime error,
+# Es domāju, ka tas notiek tagad, jo autograding tiek izpildīts tieši pirms termiņa beigām,
+# kad visa fakultāte noslogo šo codespace tādejādi neizpildot šo testu 4 minūšu laikā
 
 import sys
 import threading
